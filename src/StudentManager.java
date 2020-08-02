@@ -15,8 +15,13 @@ public class StudentManager {
 
 
     public void add() {
-        int id = (studentList.size() > 0) ? (studentList.size() + 1) : 1;
-        System.out.println("student id = " + id);
+        int id = studentList.size();
+        if (id > 0) {
+            id += 1;
+        } else {
+            id = 1;
+        }
+        System.out.println("Id sinh viên = " + id);
         String name = inputName();
         byte age = inputAge();
         String address = inputAddress();
@@ -41,7 +46,7 @@ public class StudentManager {
             }
         }
         if (!isExisted) {
-            System.out.printf("id = %d not existed.\n", id);
+            System.out.printf("Id = %d không tồn tại.\n", id);
         } else {
             studentFile.write(studentList);
         }
@@ -61,7 +66,7 @@ public class StudentManager {
             studentList.remove(student);
             studentFile.write(studentList);
         } else {
-            System.out.printf("id = %d not existed.\n", id);
+            System.out.printf("Id = %d không tồn tại.\n", id);
         }
     }
 
@@ -88,30 +93,30 @@ public class StudentManager {
 
 
     public int inputId() {
-        System.out.print("Input student id: ");
+        System.out.print("Nhập vào id sinh viên: ");
         while (true) {
             try {
                 int id = Integer.parseInt((scanner.nextLine()));
                 return id;
             } catch (NumberFormatException ex) {
-                System.out.print("invalid! Input student id again: ");
+                System.err.print("Không hợp lệ! Nhập lại id sinh viên: ");
             }
         }
     }
 
     private String inputName() {
-        System.out.print("Input student name: ");
+        System.out.print("Họ và tên sinh viên: ");
         return scanner.nextLine();
     }
 
     private String inputAddress() {
-        System.out.print("Input student address: ");
+        System.out.print("Địa chỉ: ");
         return scanner.nextLine();
     }
 
 
     private byte inputAge() {
-        System.out.print("Input student age: ");
+        System.out.print("Tuổi sinh viên: ");
         while (true) {
             try {
                 byte age = Byte.parseByte((scanner.nextLine()));
@@ -120,13 +125,13 @@ public class StudentManager {
                 }
                 return age;
             } catch (NumberFormatException ex) {
-                System.out.print("invalid! Input student id again: ");
+                System.err.print("Không hợp lệ! Nhập lại tuổi sinh viên: ");
             }
         }
     }
 
     private float inputGpa() {
-        System.out.print("Input student gpa: ");
+        System.out.print("Điểm trung bình: ");
         while (true) {
             try {
                 float gpa = Float.parseFloat((scanner.nextLine()));
@@ -135,7 +140,7 @@ public class StudentManager {
                 }
                 return gpa;
             } catch (NumberFormatException ex) {
-                System.out.print("invalid! Input student age again: ");
+                System.err.print("Không hợp lệ! Nhập lại điểm trung bình sinh viên: ");
             }
         }
     }

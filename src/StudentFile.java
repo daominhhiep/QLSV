@@ -32,9 +32,9 @@ public class StudentFile {
             objectInputStream = new ObjectInputStream(fileInputStream);
             studentList = (List<Student>) objectInputStream.readObject();
         } catch (FileNotFoundException exception) {
-            exception.printStackTrace();
+            System.err.println("Không tìm thấy file lưu trữ danh sách sinh viên!");
         } catch (IOException exception) {
-            exception.printStackTrace();
+            System.err.println("Chưa có thông tinh sinh viên nào trong hệ thống!");
         } catch (ClassNotFoundException exception) {
             exception.printStackTrace();
         } finally {
