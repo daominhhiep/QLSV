@@ -5,7 +5,6 @@ public class Student implements Serializable {
     private String name;
     private byte age;
     private String address;
-    /* điểm trung bình của sinh viên */
     private float gpa;
 
     public Student() {

@@ -82,13 +82,23 @@ public class StudentManager {
 
 
     public void show() {
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.printf("| %5s | ", "ID");
+        System.out.printf("%20s | ", "Tên sinh viên");
+        System.out.printf("%5s | ", "Tuổi");
+        System.out.printf("%7s","");
+        System.out.printf("%-13s | ", "Địa chỉ");
+        System.out.printf("%10s |", "Điểm TB");
+        System.out.println();
+        System.out.println("----------------------------------------------------------------------------");
         for (Student student : studentList) {
-            System.out.format("%5d | ", student.getId());
-            System.out.format("%20s | ", student.getName());
-            System.out.format("%5d | ", student.getAge());
-            System.out.format("%20s | ", student.getAddress());
-            System.out.format("%10.1f%n", student.getGpa());
-        }
+            System.out.printf("| %5d | ", student.getId());
+            System.out.printf("%20s | ", student.getName());
+            System.out.printf("%5d | ", student.getAge());
+            System.out.printf("%20s | ", student.getAddress());
+            System.out.printf("%10s |", student.getGpa());
+            System.out.println();
+            System.out.println("----------------------------------------------------------------------------");        }
     }
 
 

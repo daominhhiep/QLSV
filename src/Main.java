@@ -64,7 +64,7 @@ public class Main {
 
 
     public static void showMenu() {
-        System.out.println("-----------Menu------------");
+        System.out.println("------------------------------------MENU------------------------------------");
         System.out.println("1. Thêm thông tin sinh viên.");
         System.out.println("2. Sửa thông tin sinh viên theo id.");
         System.out.println("3. Xóa thông tin sinh viên theo id.");
@@ -72,13 +72,13 @@ public class Main {
         System.out.println("5. Sắp xếp danh sách học viên theo họ tên.");
         System.out.println("6. Hiển thị danh sách học viên.");
         System.out.println("0. Thoát.");
-        System.out.println("---------------------------");
+        System.out.println("----------------------------------------------------------------------------");
         System.out.print("Please choose: ");
     }
 
     public static void showMenu2() {
-        System.out.println("---------------------------");
-        System.out.println("1. Nhập số bất kỳ để trở lại menu");
+        System.out.println("----------------------------------------------------------------------------");
+        System.out.println("1. Nhập ký tự bất kỳ để trở lại menu");
         System.out.println("0. Thoát.");
         System.out.print("Please choose: ");
     }
